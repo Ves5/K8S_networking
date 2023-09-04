@@ -1,16 +1,16 @@
 # iperf3 service definition
-apiVersion: v1
-kind: Service
-metadata:
-  name: iperf-server
-spec:
-  selector:
-    app: iperf-server
-  ports:
-  - port: 5201
-    targetPort: 5201
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: iperf-server
+# spec:
+#   selector:
+#     app: iperf-server
+#   ports:
+#   - port: 5201
+#     targetPort: 5201
 
----
+# ---
 # iperf3 server deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -30,12 +30,8 @@ spec:
         node: k8s3
       containers:
       - name: iperf-server
-        image: networkstatic/iperf3
-        args: ['-s']
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "1"
+        image: nicolaka/netshoot
+        args: ['iperf3', '-s']
         ports:
         - containerPort: 5201
           name: server
@@ -61,12 +57,8 @@ spec:
         node: k8s2
       containers:
       - name: iperf-client
-        image: networkstatic/iperf3
+        image: nicolaka/netshoot
         command: ['/bin/sh', '-c', 'sleep infinity']
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "1"
         ports:
         - containerPort: 5201
           name: client

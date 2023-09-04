@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 set -eu
-
-for filename in deployments/*.yaml; do
+filename=deployments/deployment2.yaml
+# for filename in deployments/*.yaml; do
     [ -e "$filename" ] || continue
 
     echo "Deploying $filename to cluster
@@ -26,25 +26,29 @@ for filename in deployments/*.yaml; do
 
     # run few iperf tests to get average
     POD=$(kubectl get pod -l app=iperf-client -o jsonpath="{.items[0].metadata.name}")
+    IP=$(kubectl get pod -l app=iperf-server -o jsonpath="{.items[0].status.podIP}")
+    # echo "Using pod $POD for tests"
     
     # iperf3 TCP tests
     echo "[TCP] starting throughput tests"
     for i in {1..5}; do
         ### to consider omitting first 1-2 seconds cause of TCP startup
         # tail commented to see if the TCP issue happens
-        kubectl exec -it ${POD} -- iperf3 -c iperf-server -T "Client on ${HOST}" $@ #| tail -4
+        kubectl exec -it ${POD} -- iperf3 -c $IP $@ #| tail -4 | head -n 2
+        # echo ""
     done
 
     # iperf3 UDP tests
     echo "[UDP] starting throughput tests"
     for i in {1..5}; do
-        kubectl exec -it ${POD} -- iperf3 -c iperf-server -u -b 0 -T "Client on ${HOST}" $@ | tail -4
+        kubectl exec -it ${POD} -- iperf3 -c $IP -u -b 0 $@ #| tail -4 | head -n 2
     done
 
     # Ping RTT tests
     echo "[RTT] starting latency tests"
     for i in {1..5}; do
-        kubectl exec -it ${POD} -- ping -c 100 -i 0.2 iperf-server | tail -1
+        kubectl exec -it ${POD} -- ping -c 100 -i 0.2 $IP | tail -1
+        # echo ""
     done
 
     echo "Cleaning up $filename deployment"
@@ -52,6 +56,6 @@ for filename in deployments/*.yaml; do
     kubectl delete --cascade -f $filename
 
     echo "Deployment cleaned up"
-done
+# done
 
 echo "Tests done"
