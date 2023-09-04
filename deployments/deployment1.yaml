@@ -1,0 +1,73 @@
+# iperf3 service definition
+apiVersion: v1
+kind: Service
+metadata:
+  name: iperf-server
+spec:
+  selector:
+    app: iperf-server
+  ports:
+  - port: 5201
+    targetPort: 5201
+
+---
+# iperf3 server deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iperf-server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iperf-server
+  template:
+    metadata:
+      labels:
+        app: iperf-server
+    spec:
+      nodeSelector:
+        node: k8s2
+      containers:
+      - name: iperf-server
+        image: networkstatic/iperf3
+        args: ['-s']
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1"
+        ports:
+        - containerPort: 5201
+          name: server
+      terminationGracePeriodSeconds: 0
+
+---
+# iperf3 client deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iperf-client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iperf-client
+  template:
+    metadata:
+      labels:
+        app: iperf-client
+    spec:
+      nodeSelector:
+        node: k8s3
+      containers:
+      - name: iperf-client
+        image: networkstatic/iperf3
+        command: ['/bin/sh', '-c', 'sleep infinity']
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1"
+        ports:
+        - containerPort: 5201
+          name: client
+      terminationGracePeriodSeconds: 0
