@@ -1,12 +1,14 @@
 #!/usr/bin/bash
 
 set -eu
-filename=deployments/deployment2.yaml
+
+savefile=results/${1-$(date +"%Y-%m-%d-%H-%M-%S")}.txt
+
+filename=deployments/deployment.yaml
 # for filename in deployments/*.yaml; do
     [ -e "$filename" ] || continue
 
-    echo "Deploying $filename to cluster
-    "
+    echo -e "\nDeploying $filename to cluster"
     # set up deployment
     kubectl create -f $filename
 
@@ -30,28 +32,28 @@ filename=deployments/deployment2.yaml
     # echo "Using pod $POD for tests"
     
     # iperf3 TCP tests
-    echo "[TCP] starting throughput tests"
+    echo -e "\n[TCP] starting throughput tests\n"
     for i in {1..5}; do
-        ### to consider omitting first 1-2 seconds cause of TCP startup
-        # tail commented to see if the TCP issue happens
-        kubectl exec -it ${POD} -- iperf3 -c $IP $@ #| tail -4 | head -n 2
+        echo "Test $i"
+        kubectl exec -it ${POD} -- iperf3 -c $IP -O 2 | tail -4 | head -n 2 >> $savefile
         # echo ""
     done
 
     # iperf3 UDP tests
-    echo "[UDP] starting throughput tests"
+    echo -e "\n[UDP] starting throughput tests\n"
     for i in {1..5}; do
-        kubectl exec -it ${POD} -- iperf3 -c $IP -u -b 0 $@ #| tail -4 | head -n 2
+        echo "Test $i"
+        kubectl exec -it ${POD} -- iperf3 -c $IP -u -b 0 | tail -4 | head -n 2 >> $savefile
     done
 
     # Ping RTT tests
-    echo "[RTT] starting latency tests"
+    echo -e "\n[RTT] starting latency tests\n"
     for i in {1..5}; do
-        kubectl exec -it ${POD} -- ping -c 100 -i 0.2 $IP | tail -1
-        # echo ""
+        echo "Test $i"
+        kubectl exec -it ${POD} -- hping3 $IP -c 100 --faster -1 | tail -2 >> $savefile
     done
 
-    echo "Cleaning up $filename deployment"
+    echo -e "\nCleaning up $filename deployment"
     # clean after deployment
     kubectl delete --cascade -f $filename
 

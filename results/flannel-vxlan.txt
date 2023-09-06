@@ -1,0 +1,60 @@
+[  5]   0.00-10.00  sec  1.05 GBytes   905 Mbits/sec  276             sender
+[  5]   0.00-10.04  sec  1.06 GBytes   905 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.06 GBytes   907 Mbits/sec  276             sender
+[  5]   0.00-10.04  sec  1.06 GBytes   906 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.04 GBytes   897 Mbits/sec  440             sender
+[  5]   0.00-10.04  sec  1.05 GBytes   896 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.05 GBytes   901 Mbits/sec  463             sender
+[  5]   0.00-10.04  sec  1.05 GBytes   901 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.05 GBytes   901 Mbits/sec  276             sender
+[  5]   0.00-10.04  sec  1.05 GBytes   901 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.12 GBytes   965 Mbits/sec  0.000 ms  0/863090 (0%)  sender
+[  5]   0.00-10.04  sec  1.07 GBytes   913 Mbits/sec  0.012 ms  36027/855393 (4.2%)  receiver
+[  5]   0.00-10.00  sec  1.15 GBytes   986 Mbits/sec  0.000 ms  0/881720 (0%)  sender
+[  5]   0.00-10.04  sec  1.07 GBytes   913 Mbits/sec  0.016 ms  54737/874093 (6.3%)  receiver
+[  5]   0.00-10.00  sec  1.13 GBytes   973 Mbits/sec  0.000 ms  0/870040 (0%)  sender
+[  5]   0.00-10.04  sec  1.07 GBytes   914 Mbits/sec  0.006 ms  41391/862360 (4.8%)  receiver
+[  5]   0.00-10.00  sec  1.14 GBytes   981 Mbits/sec  0.000 ms  0/877510 (0%)  sender
+[  5]   0.00-10.04  sec  1.07 GBytes   913 Mbits/sec  0.013 ms  50111/869841 (5.8%)  receiver
+[  5]   0.00-10.00  sec  1.13 GBytes   969 Mbits/sec  0.000 ms  0/866360 (0%)  sender
+[  5]   0.00-10.04  sec  1.07 GBytes   914 Mbits/sec  0.006 ms  37879/858674 (4.4%)  receiver
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.3/5.4/11.7 ms
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.0/5.1/11.1 ms
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.6/4.9/8.9 ms
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.1/4.7/8.9 ms
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.2/5.0/8.6 ms
+[  5]   0.00-10.00  sec  1.03 GBytes   885 Mbits/sec  230             sender
+[  5]   0.00-10.04  sec  1.03 GBytes   885 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.03 GBytes   887 Mbits/sec  276             sender
+[  5]   0.00-10.04  sec  1.04 GBytes   887 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.04 GBytes   890 Mbits/sec  276             sender
+[  5]   0.00-10.04  sec  1.04 GBytes   889 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.01 GBytes   868 Mbits/sec  276             sender
+[  5]   0.00-10.04  sec  1.01 GBytes   868 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.01 GBytes   870 Mbits/sec  276             sender
+[  5]   0.00-10.04  sec  1.02 GBytes   870 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec  1.12 GBytes   963 Mbits/sec  0.000 ms  0/861080 (0%)  sender
+[  5]   0.00-10.04  sec  1.06 GBytes   909 Mbits/sec  0.015 ms  36869/853379 (4.3%)  receiver
+[  5]   0.00-10.00  sec  1.12 GBytes   958 Mbits/sec  0.000 ms  0/856600 (0%)  sender
+[  5]   0.00-10.04  sec  1.07 GBytes   914 Mbits/sec  0.021 ms  28353/849131 (3.3%)  receiver
+[  5]   0.00-10.00  sec  1.10 GBytes   943 Mbits/sec  0.000 ms  0/843100 (0%)  sender
+[  5]   0.00-10.04  sec  1.07 GBytes   912 Mbits/sec  0.006 ms  16719/835401 (2%)  receiver
+[  5]   0.00-10.00  sec  1.14 GBytes   980 Mbits/sec  0.000 ms  0/876250 (0%)  sender
+[  5]   0.00-10.05  sec  1.07 GBytes   917 Mbits/sec  0.025 ms  44975/868563 (5.2%)  receiver
+[  5]   0.00-10.00  sec  1.11 GBytes   956 Mbits/sec  0.000 ms  0/854790 (0%)  sender
+[  5]   0.00-10.04  sec  1.07 GBytes   912 Mbits/sec  0.024 ms  28507/847072 (3.4%)  receiver
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.6/4.4/7.8 ms
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.4/4.9/7.7 ms
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.0/4.7/8.7 ms
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.1/5.1/8.8 ms
+10 packets transmitted, 10 packets received, 0% packet loss
+round-trip min/avg/max = 1.4/104.4/1001.1 ms
