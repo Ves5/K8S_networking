@@ -34,24 +34,28 @@ filename=deployments/deployment.yaml
     # iperf3 TCP tests
     echo -e "\n[TCP] starting throughput tests\n"
     for i in {1..5}; do
-        echo "Test $i"
-        kubectl exec -it ${POD} -- iperf3 -c $IP -O 2 | tail -3 | head -n 1 | awk '{print $7}' >> $savefile
-        # returns receiver throughput
+        echo "Iteration $i"
+        kubectl exec -it ${POD} -- iperf3 -c $IP | grep sender | awk '{print $7, $9}' >> $savefile
+        # returns sender throughput and retries
     done
+    # sleep for 5 seconds
+    sleep 5
 
     # iperf3 UDP tests
     echo -e "\n[UDP] starting throughput tests\n"
     for i in {1..5}; do
-        echo "Test $i"
-        kubectl exec -it ${POD} -- iperf3 -c $IP -u -b 1000m | tail -3 | head -n 1 | awk '{print $7 $9 $11}' >> $savefile
+        echo "Iteration $i"
+        kubectl exec -it ${POD} -- iperf3 -c $IP -u -b 0 | grep receiver | awk '{print $7, $9, $12}' >> $savefile
         # returns receiver throughput, jitter and datagram loss
     done
+    # sleep for 5 seconds
+    sleep 5
 
     # Ping RTT tests
     echo -e "\n[RTT] starting latency tests\n"
     for i in {1..5}; do
-        echo "Test $i"
-        kubectl exec -it ${POD} -- hping3 $IP -c 100 --faster -1 | tail -1 | awk '{print $4}' >> $savefile
+        echo "Iteration $i"
+        kubectl exec -it ${POD} -- hping3 $IP -c 50 -i u20000 -1 | tail -1 | awk '{print $4}' >> $savefile
         # returns just the values of min/avg/max from output of hping3 -> to be parsed later into csv
     done
 
