@@ -1,16 +1,31 @@
-# iperf3 service definition
+# iperf3 TCP service definition
 # apiVersion: v1
 # kind: Service
 # metadata:
-#   name: iperf-server
+#   name: iperf-server-tcp
 # spec:
 #   selector:
 #     app: iperf-server
 #   ports:
-#   - port: 5201
+#   - protocol: TCP
+#     port: 5201
 #     targetPort: 5201
 
 # ---
+# # iperf3 UDP service definition
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: iperf-server-udp
+# spec:
+#   selector:
+#     app: iperf-server
+#   ports:
+#   - protocol: UDP
+#     port: 5201
+#     targetPort: 5201
+
+---
 # iperf3 server deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -38,6 +53,7 @@ spec:
         securityContext:
           capabilities:
             add: ["NET_RAW"]
+        imagePullPolicy: IfNotPresent
       terminationGracePeriodSeconds: 0
 
 ---
@@ -68,4 +84,5 @@ spec:
         securityContext:
           capabilities:
             add: ["NET_RAW"]
+        imagePullPolicy: IfNotPresent
       terminationGracePeriodSeconds: 0
