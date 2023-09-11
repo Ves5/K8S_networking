@@ -1,0 +1,220 @@
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 100M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 49555 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  11.9 MBytes  99.9 Mbits/sec  9013  
+[  5]   1.00-2.00   sec  11.9 MBytes  99.9 Mbits/sec  9005  
+[  5]   2.00-3.00   sec  11.9 MBytes   100 Mbits/sec  9033  
+[  5]   3.00-4.00   sec  11.9 MBytes   100 Mbits/sec  9018  
+[  5]   4.00-5.00   sec  11.9 MBytes   100 Mbits/sec  9019  
+[  5]   5.00-6.00   sec  11.9 MBytes   100 Mbits/sec  9018  
+[  5]   6.00-7.00   sec  11.9 MBytes   100 Mbits/sec  9021  
+[  5]   7.00-8.00   sec  11.9 MBytes   100 Mbits/sec  9018  
+[  5]   8.00-9.00   sec  11.9 MBytes   100 Mbits/sec  9018  
+[  5]   9.00-10.00  sec  11.9 MBytes   100 Mbits/sec  9020  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   119 MBytes   100 Mbits/sec  0.000 ms  0/90183 (0%)  sender
+[  5]   0.00-10.04  sec   119 MBytes  99.6 Mbits/sec  0.062 ms  22/90183 (0.024%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 200M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 43352 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  23.8 MBytes   200 Mbits/sec  18027  
+[  5]   1.00-2.00   sec  23.8 MBytes   200 Mbits/sec  18039  
+[  5]   2.00-3.00   sec  23.8 MBytes   200 Mbits/sec  18036  
+[  5]   3.00-4.00   sec  23.8 MBytes   200 Mbits/sec  18041  
+[  5]   4.00-5.00   sec  23.8 MBytes   200 Mbits/sec  18032  
+[  5]   5.00-6.00   sec  23.8 MBytes   200 Mbits/sec  18039  
+[  5]   6.00-7.00   sec  23.8 MBytes   200 Mbits/sec  18041  
+[  5]   7.00-8.00   sec  23.8 MBytes   200 Mbits/sec  18035  
+[  5]   8.00-9.00   sec  23.8 MBytes   200 Mbits/sec  18037  
+[  5]   9.00-10.00  sec  23.8 MBytes   200 Mbits/sec  18039  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   238 MBytes   200 Mbits/sec  0.000 ms  0/180366 (0%)  sender
+[  5]   0.00-10.04  sec   238 MBytes   199 Mbits/sec  0.030 ms  321/180366 (0.18%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 300M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 37312 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  35.8 MBytes   300 Mbits/sec  27054  
+[  5]   1.00-2.00   sec  35.7 MBytes   300 Mbits/sec  27041  
+[  5]   2.00-3.00   sec  35.8 MBytes   300 Mbits/sec  27057  
+[  5]   3.00-4.00   sec  35.8 MBytes   300 Mbits/sec  27073  
+[  5]   4.00-5.00   sec  35.8 MBytes   300 Mbits/sec  27050  
+[  5]   5.00-6.00   sec  35.8 MBytes   300 Mbits/sec  27052  
+[  5]   6.00-7.00   sec  35.8 MBytes   300 Mbits/sec  27061  
+[  5]   7.00-8.00   sec  35.8 MBytes   300 Mbits/sec  27051  
+[  5]   8.00-9.00   sec  35.8 MBytes   300 Mbits/sec  27054  
+[  5]   9.00-10.00  sec  35.8 MBytes   300 Mbits/sec  27058  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   358 MBytes   300 Mbits/sec  0.000 ms  0/270551 (0%)  sender
+[  5]   0.00-10.04  sec   355 MBytes   297 Mbits/sec  0.009 ms  1962/270551 (0.73%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 400M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 59414 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  47.7 MBytes   400 Mbits/sec  36071  
+[  5]   1.00-2.00   sec  47.7 MBytes   400 Mbits/sec  36077  
+[  5]   2.00-3.00   sec  47.7 MBytes   400 Mbits/sec  36056  
+[  5]   3.00-4.00   sec  47.7 MBytes   400 Mbits/sec  36091  
+[  5]   4.00-5.00   sec  47.7 MBytes   399 Mbits/sec  36054  
+[  5]   5.00-6.00   sec  47.7 MBytes   401 Mbits/sec  36100  
+[  5]   6.00-7.00   sec  47.7 MBytes   400 Mbits/sec  36051  
+[  5]   7.00-8.00   sec  47.7 MBytes   400 Mbits/sec  36078  
+[  5]   8.00-9.00   sec  47.7 MBytes   400 Mbits/sec  36064  
+[  5]   9.00-10.00  sec  47.7 MBytes   400 Mbits/sec  36100  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   477 MBytes   400 Mbits/sec  0.000 ms  0/360742 (0%)  sender
+[  5]   0.00-10.04  sec   461 MBytes   385 Mbits/sec  0.008 ms  11917/360742 (3.3%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 500M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 48045 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  59.5 MBytes   499 Mbits/sec  45047  
+[  5]   1.00-2.00   sec  59.6 MBytes   500 Mbits/sec  45109  
+[  5]   2.00-3.00   sec  59.6 MBytes   500 Mbits/sec  45100  
+[  5]   3.00-4.00   sec  59.6 MBytes   500 Mbits/sec  45095  
+[  5]   4.00-5.00   sec  59.6 MBytes   500 Mbits/sec  45116  
+[  5]   5.00-6.00   sec  59.6 MBytes   500 Mbits/sec  45086  
+[  5]   6.00-7.00   sec  59.6 MBytes   500 Mbits/sec  45081  
+[  5]   7.00-8.00   sec  59.6 MBytes   500 Mbits/sec  45111  
+[  5]   8.00-9.00   sec  59.6 MBytes   500 Mbits/sec  45084  
+[  5]   9.00-10.00  sec  59.6 MBytes   500 Mbits/sec  45099  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   596 MBytes   500 Mbits/sec  0.000 ms  0/450928 (0%)  sender
+[  5]   0.00-10.04  sec   518 MBytes   433 Mbits/sec  0.003 ms  59004/450928 (13%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 600M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 57302 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  71.4 MBytes   599 Mbits/sec  54030  
+[  5]   1.00-2.00   sec  71.5 MBytes   600 Mbits/sec  54103  
+[  5]   2.00-3.00   sec  71.6 MBytes   601 Mbits/sec  54203  
+[  5]   3.00-4.00   sec  71.5 MBytes   600 Mbits/sec  54072  
+[  5]   4.00-5.00   sec  71.4 MBytes   599 Mbits/sec  54032  
+[  5]   5.00-6.00   sec  71.5 MBytes   600 Mbits/sec  54078  
+[  5]   6.00-7.00   sec  71.7 MBytes   602 Mbits/sec  54263  
+[  5]   7.00-8.00   sec  71.4 MBytes   599 Mbits/sec  54055  
+[  5]   8.00-9.00   sec  71.6 MBytes   601 Mbits/sec  54175  
+[  5]   9.00-10.00  sec  71.5 MBytes   600 Mbits/sec  54107  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   715 MBytes   600 Mbits/sec  0.000 ms  0/541118 (0%)  sender
+[  5]   0.00-10.04  sec   543 MBytes   454 Mbits/sec  0.007 ms  130008/541118 (24%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 700M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 60478 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  76.9 MBytes   645 Mbits/sec  58216  
+[  5]   1.00-2.00   sec  77.8 MBytes   652 Mbits/sec  58846  
+[  5]   2.00-3.00   sec  79.2 MBytes   664 Mbits/sec  59889  
+[  5]   3.00-4.00   sec  78.0 MBytes   654 Mbits/sec  59026  
+[  5]   4.00-5.00   sec  76.1 MBytes   638 Mbits/sec  57584  
+[  5]   5.00-6.00   sec  77.3 MBytes   648 Mbits/sec  58484  
+[  5]   6.00-7.00   sec  76.9 MBytes   645 Mbits/sec  58143  
+[  5]   7.00-8.00   sec  78.2 MBytes   656 Mbits/sec  59146  
+[  5]   8.00-9.00   sec  76.6 MBytes   643 Mbits/sec  57949  
+[  5]   9.00-10.00  sec  75.1 MBytes   630 Mbits/sec  56851  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   772 MBytes   648 Mbits/sec  0.000 ms  0/584134 (0%)  sender
+[  5]   0.00-10.04  sec   549 MBytes   459 Mbits/sec  0.004 ms  168563/584134 (29%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 800M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 55779 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  74.0 MBytes   621 Mbits/sec  55989  
+[  5]   1.00-2.00   sec  68.4 MBytes   573 Mbits/sec  51720  
+[  5]   2.00-3.00   sec  78.9 MBytes   662 Mbits/sec  59727  
+[  5]   3.00-4.00   sec  80.5 MBytes   676 Mbits/sec  60930  
+[  5]   4.00-5.00   sec  83.3 MBytes   699 Mbits/sec  63011  
+[  5]   5.00-6.00   sec  82.5 MBytes   692 Mbits/sec  62430  
+[  5]   6.00-7.00   sec  82.5 MBytes   692 Mbits/sec  62418  
+[  5]   7.00-8.00   sec  79.2 MBytes   664 Mbits/sec  59924  
+[  5]   8.00-9.00   sec  84.2 MBytes   706 Mbits/sec  63666  
+[  5]   9.00-10.00  sec  81.3 MBytes   682 Mbits/sec  61508  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   795 MBytes   667 Mbits/sec  0.000 ms  0/601323 (0%)  sender
+[  5]   0.00-10.05  sec   536 MBytes   448 Mbits/sec  0.022 ms  195747/601323 (33%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 900M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 40549 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  71.3 MBytes   598 Mbits/sec  53940  
+[  5]   1.00-2.00   sec  71.8 MBytes   602 Mbits/sec  54303  
+[  5]   2.00-3.00   sec  70.6 MBytes   592 Mbits/sec  53392  
+[  5]   3.00-4.00   sec  71.6 MBytes   601 Mbits/sec  54168  
+[  5]   4.00-5.00   sec  71.7 MBytes   602 Mbits/sec  54257  
+[  5]   5.00-6.00   sec  71.6 MBytes   601 Mbits/sec  54166  
+[  5]   6.00-7.00   sec  71.7 MBytes   602 Mbits/sec  54255  
+[  5]   7.00-8.00   sec  71.3 MBytes   598 Mbits/sec  53923  
+[  5]   8.00-9.00   sec  71.0 MBytes   595 Mbits/sec  53683  
+[  5]   9.00-10.00  sec  71.4 MBytes   599 Mbits/sec  54003  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   714 MBytes   599 Mbits/sec  0.000 ms  0/540090 (0%)  sender
+[  5]   0.00-10.05  sec   554 MBytes   463 Mbits/sec  0.012 ms  120896/540090 (22%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 1000M
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 59368 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  78.2 MBytes   656 Mbits/sec  59177  
+[  5]   1.00-2.00   sec  78.6 MBytes   660 Mbits/sec  59500  
+[  5]   2.00-3.00   sec  82.0 MBytes   688 Mbits/sec  62057  
+[  5]   3.00-4.00   sec  82.7 MBytes   693 Mbits/sec  62534  
+[  5]   4.00-5.00   sec  83.2 MBytes   698 Mbits/sec  62926  
+[  5]   5.00-6.00   sec  83.9 MBytes   704 Mbits/sec  63507  
+[  5]   6.00-7.00   sec  83.5 MBytes   701 Mbits/sec  63196  
+[  5]   7.00-8.00   sec  82.5 MBytes   692 Mbits/sec  62434  
+[  5]   8.00-9.00   sec  84.4 MBytes   708 Mbits/sec  63884  
+[  5]   9.00-10.00  sec  83.8 MBytes   703 Mbits/sec  63434  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   823 MBytes   690 Mbits/sec  0.000 ms  0/622649 (0%)  sender
+[  5]   0.00-10.04  sec   541 MBytes   452 Mbits/sec  0.025 ms  213366/622649 (34%)  receiver
+
+iperf Done.
+root@iperf-client-deployment-5cb9899bb-xbvp4:/# iperf3 -c 10.38.0.1 -u -b 0
+Connecting to host 10.38.0.1, port 5201
+[  5] local 10.40.0.1 port 34281 connected to 10.38.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  96.5 MBytes   810 Mbits/sec  73040  
+[  5]   1.00-2.00   sec  99.8 MBytes   837 Mbits/sec  75500  
+[  5]   2.00-3.00   sec   104 MBytes   871 Mbits/sec  78590  
+[  5]   3.00-4.00   sec   118 MBytes   987 Mbits/sec  89050  
+[  5]   4.00-5.00   sec   108 MBytes   909 Mbits/sec  82020  
+[  5]   5.00-6.00   sec   128 MBytes  1.08 Gbits/sec  97210  
+[  5]   6.00-7.00   sec   104 MBytes   871 Mbits/sec  78550  
+[  5]   7.00-8.00   sec   103 MBytes   864 Mbits/sec  77940  
+[  5]   8.00-9.00   sec   113 MBytes   947 Mbits/sec  85430  
+[  5]   9.00-10.00  sec   122 MBytes  1.02 Gbits/sec  92350  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.07 GBytes   920 Mbits/sec  0.000 ms  0/829680 (0%)  sender
+[  5]   0.00-10.05  sec   112 MBytes  93.5 Mbits/sec  0.053 ms  744936/829680 (90%)  receiver
+
+iperf Done.
