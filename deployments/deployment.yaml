@@ -1,18 +1,23 @@
 # iperf3 TCP service definition
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: iperf-server-tcp
-# spec:
-#   selector:
-#     app: iperf-server
-#   ports:
-#   - protocol: TCP
-#     port: 5201
-#     targetPort: 5201
+apiVersion: v1
+kind: Service
+metadata:
+  name: iperf-server-svc
+spec:
+  selector:
+    app: iperf-server
+  ports:
+  - protocol: TCP
+    port: 5201
+    targetPort: server-tcp
+    name: svc-server-tcp
+  - protocol: UDP
+    port: 5201
+    targetPort: server-udp
+    name: svc-server-udp
 
-# ---
-# # iperf3 UDP service definition
+---
+# iperf3 UDP service definition
 # apiVersion: v1
 # kind: Service
 # metadata:
@@ -21,11 +26,9 @@
 #   selector:
 #     app: iperf-server
 #   ports:
-#   - protocol: UDP
-#     port: 5201
-#     targetPort: 5201
+#   
 
----
+# ---
 # iperf3 server deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -49,7 +52,11 @@ spec:
         args: ['-s']
         ports:
         - containerPort: 5201
-          name: server
+          name: server-udp
+          protocol: UDP
+        - containerPort: 5201
+          name: server-tcp
+          protocol: TCP
         securityContext:
           capabilities:
             add: ["NET_RAW"]

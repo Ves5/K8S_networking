@@ -28,9 +28,9 @@ filename=deployments/deployment.yaml
 
     # run few iperf tests to get average
     POD=$(kubectl get pod -l app=iperf-client -o jsonpath="{.items[0].metadata.name}")
-    # IP=$(kubectl get pod -l app=iperf-server -o jsonpath="{.items[0].status.podIP}")
+    IP=$(kubectl get pod -l app=iperf-server -o jsonpath="{.items[0].status.podIP}")
     
-    # iperf3 TCP tests
+    # # iperf3 TCP tests
     # echo -e "\n[TCP] starting pod-pod throughput tests\n"
     # for i in {1..5}; do
     #     echo "Iteration $i"
@@ -63,64 +63,20 @@ filename=deployments/deployment.yaml
     # # sleep for 5 seconds
     # sleep 5
 
-    # iperf3 pod-svc tests
 
-    kubectl apply -f - <<EOF
-apiVersion: v1
-kind: Service
-metadata:
-  name: iperf-server-tcp
-spec:
-  selector:
-    app: iperf-server
-  ports:
-  - protocol: TCP
-    port: 5201
-    targetPort: 5201
-EOF
+    # SVC_IP_TCP=$(kubectl get svc iperf-server-svc -o jsonpath="{.spec.clusterIP}")
 
-    SVC_IP_TCP=$(kubectl get svc iperf-server-tcp -o jsonpath="{.spec.clusterIP}")
-    
+    # echo -e "\n[TCP] starting pod-svc throughput tests\n"
+    # for i in {1..5}; do
+    #     echo "Iteration $i"
+    #     kubectl exec -it ${POD} -- iperf3 -c $SVC_IP_TCP -O 2 | grep sender | awk '{print $7, $9}' >> $savefile
+    #     # returns sender throughput and retries
+    # done
 
-    echo -e "\n[TCP] starting pod-svc throughput tests\n"
-    for i in {1..5}; do
-        echo "Iteration $i"
-        kubectl exec -it ${POD} -- iperf3 -c $SVC_IP_TCP -O 2 | grep sender | awk '{print $7, $9}' >> $savefile
-        # returns sender throughput and retries
-    done
+    # # sleep for 5 seconds
+    # sleep 5
 
-    kubectl delete -f - <<EOF
-apiVersion: v1
-kind: Service
-metadata:
-  name: iperf-server-tcp
-spec:
-  selector:
-    app: iperf-server
-  ports:
-  - protocol: TCP
-    port: 5201
-    targetPort: 5201
-EOF
-
-    # sleep for 5 seconds
-    sleep 5
-
-    kubectl apply -f - <<EOF
-apiVersion: v1
-kind: Service
-metadata:
-  name: iperf-server-udp
-spec:
-  selector:
-    app: iperf-server
-  ports:
-  - protocol: UDP
-    port: 5201
-    targetPort: 5201
-EOF
-
-    SVC_IP_UDP=$(kubectl get svc iperf-server-udp -o jsonpath="{.spec.clusterIP}")
+    SVC_IP_UDP=$(kubectl get svc iperf-server-svc -o jsonpath="{.spec.clusterIP}")
 
     echo -e "\n[UDP] starting pod-svc throughput tests\n"
     for i in {1..5}; do
@@ -128,20 +84,6 @@ EOF
         kubectl exec -it ${POD} -- iperf3 -c $SVC_IP_UDP -u -b 0 | grep receiver | awk '{print $7, $9, $12}' >> $savefile
         # returns receiver throughput, jitter and datagram loss
     done
-
-    kubectl delete -f - <<EOF
-apiVersion: v1
-kind: Service
-metadata:
-  name: iperf-server-udp
-spec:
-  selector:
-    app: iperf-server
-  ports:
-  - protocol: UDP
-    port: 5201
-    targetPort: 5201
-EOF
 
     echo -e "\nCleaning up $filename deployment"
     # clean after deployment
