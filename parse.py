@@ -51,11 +51,11 @@ for file in files:
         avg_rtt = round(avg_rtt / 5, 2)
         max_rtt = max(max_rtt)
     
-    values.append([tcp_bitrate, tcp_retries, udp_bitrate, udp_jitter, udp_loss, min_rtt, avg_rtt, max_rtt])
+    values.append([file.split('.')[0], tcp_bitrate, tcp_retries, udp_bitrate, udp_jitter, udp_loss, min_rtt, avg_rtt, max_rtt])
     #print(f"{file}: {tcp_bitrate}, {tcp_retries}, {udp_bitrate}, {udp_jitter}, {udp_loss}, {min_rtt}, {avg_rtt}, {max_rtt}")
     
 # add to dataframe
-df = pd.DataFrame(values, columns=['TCP Bitrate', 'TCP Retries', 'UDP Bitrate', 'UDP Jitter', 'UDP Loss', 'Min RTT', 'Avg RTT', 'Max RTT'], index=[file.split('.')[0] for file in files])
+df = pd.DataFrame(values, columns=['CNI-Protocol', 'TCP Bitrate', 'TCP Retries', 'UDP Bitrate', 'UDP Jitter', 'UDP Loss', 'Min RTT', 'Avg RTT', 'Max RTT'])
 
 # save to csv
 df.to_csv('results.csv')   
