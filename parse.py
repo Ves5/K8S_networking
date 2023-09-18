@@ -172,45 +172,45 @@ for file in files:
     
     if file.split('.')[0] == 'bare-metal':
         values.insert(0, [file.split('.')[0], 
-                   tcp_bitrate, tcp_bitrate_sdev, tcp_bitrate_uncertainty,
-                   tcp_retries, tcp_retries_sdev, tcp_retries_uncertainty,
-                   udp_bitrate, udp_bitrate_sdev, udp_bitrate_uncertainty,
-                   udp_jitter, udp_jitter_sdev, udp_jitter_uncertainty,
-                   udp_loss, udp_loss_sdev, udp_loss_uncertainty,
-                   min_rtt, avg_rtt, avg_rtt_sdev, avg_rtt_uncertainty, max_rtt,
-                   tcp_svc_bitrate, tcp_svc_bitrate_sdev, tcp_svc_bitrate_uncertainty,
-                   tcp_svc_retries, tcp_svc_retries_sdev, tcp_svc_retries_uncertainty,
-                   udp_svc_bitrate, udp_svc_bitrate_sdev, udp_svc_bitrate_uncertainty,
-                   udp_svc_jitter, udp_svc_jitter_sdev, udp_svc_jitter_uncertainty,
-                   udp_svc_loss, udp_svc_loss_sdev, udp_svc_loss_uncertainty])
+                   tcp_bitrate, tcp_bitrate_uncertainty, tcp_bitrate_sdev, 
+                   tcp_retries, tcp_retries_uncertainty, tcp_retries_sdev, 
+                   udp_bitrate, udp_bitrate_uncertainty, udp_bitrate_sdev, 
+                   udp_jitter, udp_jitter_uncertainty, udp_jitter_sdev, 
+                   udp_loss, udp_loss_uncertainty, udp_loss_sdev, 
+                   min_rtt, avg_rtt, avg_rtt_uncertainty, avg_rtt_sdev, max_rtt,
+                   tcp_svc_bitrate, tcp_svc_bitrate_uncertainty, tcp_svc_bitrate_sdev, 
+                   tcp_svc_retries, tcp_svc_retries_uncertainty, tcp_svc_retries_sdev, 
+                   udp_svc_bitrate, udp_svc_bitrate_uncertainty, udp_svc_bitrate_sdev, 
+                   udp_svc_jitter, udp_svc_jitter_uncertainty, udp_svc_jitter_sdev, 
+                   udp_svc_loss, udp_svc_loss_uncertainty, udp_svc_loss_sdev])
     else:
         values.append([file.split('.')[0], 
-                   tcp_bitrate, tcp_bitrate_sdev, tcp_bitrate_uncertainty,
-                   tcp_retries, tcp_retries_sdev, tcp_retries_uncertainty,
-                   udp_bitrate, udp_bitrate_sdev, udp_bitrate_uncertainty,
-                   udp_jitter, udp_jitter_sdev, udp_jitter_uncertainty,
-                   udp_loss, udp_loss_sdev, udp_loss_uncertainty,
-                   min_rtt, avg_rtt, avg_rtt_sdev, avg_rtt_uncertainty, max_rtt,
-                   tcp_svc_bitrate, tcp_svc_bitrate_sdev, tcp_svc_bitrate_uncertainty,
-                   tcp_svc_retries, tcp_svc_retries_sdev, tcp_svc_retries_uncertainty,
-                   udp_svc_bitrate, udp_svc_bitrate_sdev, udp_svc_bitrate_uncertainty,
-                   udp_svc_jitter, udp_svc_jitter_sdev, udp_svc_jitter_uncertainty,
-                   udp_svc_loss, udp_svc_loss_sdev, udp_svc_loss_uncertainty])
+                   tcp_bitrate, tcp_bitrate_uncertainty, tcp_bitrate_sdev, 
+                   tcp_retries, tcp_retries_uncertainty, tcp_retries_sdev, 
+                   udp_bitrate, udp_bitrate_uncertainty, udp_bitrate_sdev, 
+                   udp_jitter, udp_jitter_uncertainty, udp_jitter_sdev, 
+                   udp_loss, udp_loss_uncertainty, udp_loss_sdev, 
+                   min_rtt, avg_rtt, avg_rtt_uncertainty, avg_rtt_sdev, max_rtt,
+                   tcp_svc_bitrate, tcp_svc_bitrate_uncertainty, tcp_svc_bitrate_sdev, 
+                   tcp_svc_retries, tcp_svc_retries_uncertainty, tcp_svc_retries_sdev, 
+                   udp_svc_bitrate, udp_svc_bitrate_uncertainty, udp_svc_bitrate_sdev, 
+                   udp_svc_jitter, udp_svc_jitter_uncertainty, udp_svc_jitter_sdev, 
+                   udp_svc_loss, udp_svc_loss_uncertainty, udp_svc_loss_sdev])
     #print(f"{file}: {tcp_bitrate}, {tcp_retries}, {udp_bitrate}, {udp_jitter}, {udp_loss}, {min_rtt}, {avg_rtt}, {max_rtt}")
     
 # add to dataframe
 df = pd.DataFrame(values, columns=['CNI-Protocol', 
-                                   'TCP Bitrate', 'TCP Bitrate SDev', 'TCP Bitrate Uncertainty',
-                                   'TCP Retries', 'TCP Retries SDev', 'TCP Retries Uncertainty',
-                                   'UDP Bitrate', 'UDP Bitrate SDev', 'UDP Bitrate Uncertainty',
-                                   'UDP Jitter', 'UDP Jitter SDev', 'UDP Jitter Uncertainty',
-                                   'UDP Loss', 'UDP Loss SDev', 'UDP Loss Uncertainty',
-                                   'Min RTT', 'Avg RTT', 'Avg RTT SDev', 'Avg RTT Uncertainty', 'Max RTT', 
-                                   'TCP SVC Bitrate', 'TCP SVC Bitrate SDev', 'TCP SVC Bitrate Uncertainty',
-                                   'TCP SVC Retries', 'TCP SVC Retries SDev', 'TCP SVC Retries Uncertainty',
-                                   'UDP SVC Bitrate', 'UDP SVC Bitrate SDev', 'UDP SVC Bitrate Uncertainty',
-                                   'UDP SVC Jitter', 'UDP SVC Jitter SDev', 'UDP SVC Jitter Uncertainty',
-                                   'UDP SVC Loss', 'UDP SVC Loss SDev', 'UDP SVC Loss Uncertainty'])
+                                   'TCP Bitrate', '+-', 'TCP Bitrate SDev', 
+                                   'TCP Retries', '+-', 'TCP Retries SDev',
+                                   'UDP Bitrate', '+-', 'UDP Bitrate SDev', 
+                                   'UDP Jitter', '+-', 'UDP Jitter SDev', 
+                                   'UDP Loss', '+-', 'UDP Loss SDev',
+                                   'Min RTT', 'Avg RTT', '+-', 'Avg RTT SDev', 'Max RTT', 
+                                   'TCP SVC Bitrate', '+-', 'TCP SVC Bitrate SDev',
+                                   'TCP SVC Retries', '+-', 'TCP SVC Retries SDev',
+                                   'UDP SVC Bitrate', '+-', 'UDP SVC Bitrate SDev',
+                                   'UDP SVC Jitter', '+-', 'UDP SVC Jitter SDev',
+                                   'UDP SVC Loss', '+-', 'UDP SVC Loss SDev'])
 
 # save to csv
 df.to_csv('results.csv')   
